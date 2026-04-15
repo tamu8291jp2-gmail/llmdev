@@ -31,6 +31,7 @@ def index():
     return render_template("index.html", todos=todos)
 
 
+# TODOリストをファイルから削除する関数
 @app.route("/delete/<int:todo_id>")
 def delete(todo_id):
     todos = load_todos()
