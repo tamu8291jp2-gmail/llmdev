@@ -6,3 +6,4 @@ __pycache__/
 storage01/
 test_chroma_db/
 .DS_Store
+.coverage
