@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="description-box">
+    <p><strong>💡 このチャットボットでできること</strong></p>
+    <ul>
+        <li><strong>最新AIニュースの取得：</strong> 起動時に最新のAIニュース5件をお知らせします。</li>
+        <li><strong>ニュースの翻訳と要約：</strong> 『AI News』の記事URLを入力すると、日本語でわかりやすく要約します。</li>
+        <li><strong>Web検索：</strong> 最新のワードなど、わからないことがあればWeb検索して回答します。</li>
+        <li><strong>ガイドラインの確認：</strong> 社内AI利用ガイドラインに基づいた質問にもお答えします。</li>
+    </ul>
+    <p>😸 語尾が「にゃ」になる猫のキャラクターが対応するにゃ 🐾</p>
+</div>
+
+<div class="chat-box" id="chat-box">
+    <!-- メッセージはすべてJavaScriptが追加するため、ここは空でOK -->
+</div>
+
+<!-- フォーム送信(リロード)を防ぐため、formタグをdivに変更し id="chat-form" とする -->
+<div id="chat-form">
+    <div class="input-box">
+        <textarea id="user-input" placeholder="メッセージを入力..." required autofocus></textarea>
+        <button id="submit-button">送信</button>
+    </div>
+</div>
+
+<form method="POST" action="/clear">
+    <button type="submit" class="clear-button">履歴を消去</button>
+</form>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock %}
